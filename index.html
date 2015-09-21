@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>慢性病管理</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->	
+</head>
+<body>
+	<!-- the bag of page -->
+	<div class="container">
+		<div id="header" class="fluid">
+        健康管理信息系统
+    </div>
+    <div class="fluid login">
+        <form id="myform"  action="http://gxbbank.com/index/login.html"   method="post">
+            <div id="loginheader">&nbsp;<img class="mylogo" src="http://gxbbank.com/gongyong/images/index/login.gif"> &nbsp;管理登录</div>
+            <div class="logininput">&nbsp;<img class="loginimg" src="http://gxbbank.com/gongyong/images/index/user.gif">
+                用户名：<input type="text" name="username"  id="username" size="16"  autocomplete = "off"  /></div>
+            <div class="logininput">&nbsp;<img class="loginimg"  src="http://gxbbank.com/gongyong/images/index/pass.gif">
+                密码：<input type="password"  name="password" id="password" size="18" autocomplete = "off" /></div>
+            <div class="logininput">
+                <span>&nbsp;验证码：<input type="text" name="yzm" id="yzm" size="9" maxlength="5"  autocomplete = "off"  /></span>
+                <span>
+                    <img id="yzmimg" src="http://gxbbank.com/index/random.html" onclick="this.src='http://gxbbank.com/index/random.html?'+Math.random();" />
+                </span>
+                <input type="hidden" name="jump_url" value="">
+            </div>
+            <div class="loginsubimit logininput"><button type="submit">&nbsp;&nbsp;登&nbsp;&nbsp;录&nbsp;&nbsp;</button></div>
+        </form>
+    </div>
+    <div class="fluid footer">2014-2017，版权所有：北京汉氏联合生物技术有限公司,联系电话：0793-8199578</div>
+
+	</div>
+
+	<!-- end of page  -->
+	<!-- beggin of js -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">	
+		$(function()
+    {
+        $("#username").focus();
+        $("#myform").submit(function()
+        {
+
+            if($("#username").val()==""){
+                alert("请输入用户名！");
+                $("#username").focus();
+                return false;
+            }
+            if($("#password").val()==""){
+                alert("请输入密码！");
+                $("#password").focus();
+                return false;
+            }
+            if($("#yzm").val()==""){
+                alert("请输入验证码！");
+                $("#yzm").focus();
+                return false;
+            }
+        });
+        //return true;
+    });
+
+
+	</script>
+	<!-- end of js -->
+</body>
+</html>
